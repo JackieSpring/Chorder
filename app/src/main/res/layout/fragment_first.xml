@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#706720"
+    android:backgroundTint="@color/fragment_background"
+    tools:context=".FirstFragment">
+
+    <com.jackiespring.chorder.graphic.PitchChart
+        android:id="@+id/linechart"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/noteView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/buttonMenu">
+
+    </com.jackiespring.chorder.graphic.PitchChart>
+
+    <TextView
+        android:id="@+id/noteView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/view_note_unselected"
+        android:textAlignment="center"
+        android:textColor="@color/text_color"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/pitchValueView"
+        app:layout_constraintEnd_toEndOf="@+id/pitchValueView"
+        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintStart_toStartOf="@+id/pitchValueView"
+        app:layout_constraintTop_toTopOf="@+id/containerNoteButtons" />
+
+    <TextView
+        android:id="@+id/pitchValueView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="9dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:autoSizeTextType="uniform"
+        android:maxLines="1"
+        android:minLines="1"
+        android:text="@string/view_pitch_inactive"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="@color/text_color"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/baseline"
+        app:layout_constraintHeight_max="256dp"
+        app:layout_constraintHeight_min="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/noteView" />
+
+    <!--<Button
+        android:id="@+id/note_g_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="@color/note_btn_unselected"
+        android:minWidth="100dp"
+        android:text="@string/note_g"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMenu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@id/pitchValueView" />-->
+
+    <Button
+        android:id="@+id/buttonMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#00FFFFFF"
+        android:text="instruments"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_backward"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="@color/white"
+        app:strokeWidth="1dp" />
+
+    <com.jackiespring.chorder.graphic.NoteSelector
+        android:id="@+id/containerNoteButtons"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/baseline"
+        app:layout_constraintEnd_toEndOf="@+id/baseline"
+        app:layout_constraintStart_toStartOf="@+id/baseline">
+
+    </com.jackiespring.chorder.graphic.NoteSelector>
+
+    <TextView
+        android:id="@+id/baseline"
+        android:layout_width="96dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pitchValueView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pitchValueView" />
+
+    <TextView
+        android:id="@+id/instrumentView"
+        style="@style/TextAppearance.AppCompat.Button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:autoSizeTextType="none"
+        android:gravity="center"
+        android:text="prova"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/buttonMenu"
+        app:layout_constraintEnd_toStartOf="@+id/buttonMenu"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/buttonMenu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
